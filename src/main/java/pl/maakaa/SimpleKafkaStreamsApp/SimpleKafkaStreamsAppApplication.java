@@ -25,7 +25,7 @@ public class SimpleKafkaStreamsAppApplication {
 	@SendTo(KafkaStreams.SECOND_TOPIC)
 	public KStream<?, Event> process(KStream<?, Event> events) {
 		return events
-				.filter((key, value) -> value.getType().equals(EventType.NOWY))
+				.filter((key, value) -> value.getType().equals(EventType.NEW))
 				.map((key, value) -> new KeyValue<>(null, value));
 	}
 
