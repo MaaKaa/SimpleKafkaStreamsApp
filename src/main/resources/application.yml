@@ -1,0 +1,17 @@
+spring:
+  application.name: simple-kafka-streams-app
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: first-topic
+        output:
+          destination: second-topic
+      kafka:
+        streams:
+          binder:
+            configuration:
+              commit.interval.ms: 1000
+              default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+              default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+            serdeError: sendToDlq
