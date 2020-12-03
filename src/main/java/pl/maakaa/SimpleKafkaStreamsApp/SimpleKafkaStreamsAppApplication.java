@@ -7,12 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.SendTo;
-import pl.maakaa.SimpleKafkaStreamsApp.domain.Event;
-import pl.maakaa.SimpleKafkaStreamsApp.domain.enums.EventType;
-import pl.maakaa.SimpleKafkaStreamsApp.kafka.config.KafkaStreamsProcessor;
 
 @SpringBootApplication
-@EnableBinding(KafkaStreamsProcessor.class)
+@EnableBinding(KafkaStreams.class)
 public class SimpleKafkaStreamsAppApplication {
 
 	public static void main(String[] args) {
@@ -24,8 +21,8 @@ public class SimpleKafkaStreamsAppApplication {
 	 * @param events - a stream of events to be processed.
 	 * @return KStream - a stream of filtered events.
 	 */
-	@StreamListener(KafkaStreamsProcessor.FIRST_TOPIC)
-	@SendTo(KafkaStreamsProcessor.SECOND_TOPIC)
+	@StreamListener(KafkaStreams.FIRST_TOPIC)
+	@SendTo(KafkaStreams.SECOND_TOPIC)
 	public KStream<?, Event> process(KStream<?, Event> events) {
 		return events
 				.filter((key, value) -> value.getType().equals(EventType.NEW))

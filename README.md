@@ -18,9 +18,6 @@ It defines two kafka topics to which some events are being sent.
 
 Firstly, the stream of events comes to the 1st topic, then the events from this stream are filtered, and then the events that match the given predicate are processed to the second topic.
 
-### How it works:
-
-
 ## Technologies
 Used tools/ frameworks:
 
@@ -31,19 +28,7 @@ Used tools/ frameworks:
 - IntelliJ Ultimate Edition
 
 ## Setup
-1. First, make sure you have Apache Kafka and Zookeeper installed and running on you device. o do so, you can follow this tutorial: https://kafka.apache.org/quickstart, install Kafka, go to Kafka's directory and:
-
-> Start the ZooKeeper service:
->
-> bin/zookeeper-server-start.sh config/zookeeper.properties
-
-Open another terminal session and run:
-
-> Start the Kafka broker service:
->
-> bin/kafka-server-start.sh config/server.properties
-
-Once all services have successfully launched, you will have a basic Kafka environment running and ready to use.
+1. First, make sure you have Apache Kafka and Zookeeper installed and running on you device. To do so, you can follow this tutorial: https://kafka.apache.org/quickstart
 
 2. Download the project and open it in your IDE. Then, run it (if you use IntelliJ, click Shift+F10). 
 

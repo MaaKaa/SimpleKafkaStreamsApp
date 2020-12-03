@@ -1,4 +1,4 @@
-package pl.maakaa.SimpleKafkaStreamsApp.domain.enums;
+package pl.maakaa.SimpleKafkaStreamsApp;
 
 /**
  * Enum representing the type of an event.

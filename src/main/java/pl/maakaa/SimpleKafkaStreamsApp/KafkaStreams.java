@@ -1,4 +1,4 @@
-package pl.maakaa.SimpleKafkaStreamsApp.kafka.config;
+package pl.maakaa.SimpleKafkaStreamsApp;
 
 import org.apache.kafka.streams.kstream.KStream;
 import org.springframework.cloud.stream.annotation.Input;
@@ -7,7 +7,7 @@ import org.springframework.cloud.stream.annotation.Output;
 /**
  * Interface that defines kafka streams.
  */
-public interface KafkaStreamsProcessor {
+public interface KafkaStreams {
     String FIRST_TOPIC = "input";
     String SECOND_TOPIC = "output";
 
