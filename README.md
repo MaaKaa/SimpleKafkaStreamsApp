@@ -49,7 +49,7 @@ Once all services have successfully launched, you will have a basic Kafka enviro
 
 3. Open another terminal, go to the kafka folder and create a kafka producer:
 
-> bin/kafka-console-producer.sh --bro-list localhost:9092 --topic first-topic
+> bin/kafka-console-producer.sh --broker-list localhost:9092 --topic first-topic
 
 4. Open another terminal, go to the kafka folder and create a kafka consumer:
 
